@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>net10.0-windows</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <UseWindowsForms>true</UseWindowsForms>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>disable</ImplicitUsings>
+    <ApplicationIcon>Resources\app.ico</ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+    <AssemblyName>QuickQR</AssemblyName>
+    <RootNamespace>QuickQR</RootNamespace>
+    <Product>QuickQR for Windows</Product>
+    <Description>完全离线的 Windows 原生二维码工具</Description>
+    <Platforms>AnyCPU;x64;ARM64</Platforms>
+    <RuntimeIdentifiers>win-x64;win-arm64</RuntimeIdentifiers>
+    <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+    <!-- WPF owns DPI awareness via the manifest; WinForms is only used for NotifyIcon/dialogs. -->
+    <NoWarn>$(NoWarn);WFO0003</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <PackageReference Include="ZXing.Net" Version="0.16.11" />
+    <Resource Include="Resources\app.ico" />
+    <Content Include="..\THIRD-PARTY-NOTICES.md" Link="THIRD-PARTY-NOTICES.md" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="..\licenses\Apache-2.0.txt" Link="licenses\Apache-2.0.txt" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="..\LICENSE" Link="LICENSE" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="..\licenses\dotnet-LICENSE.txt" Link="licenses\dotnet-LICENSE.txt" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="..\licenses\dotnet-ThirdPartyNotices.txt" Link="ThirdPartyNotices.txt" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="..\licenses\windowsdesktop-LICENSE.txt" Link="licenses\windowsdesktop-LICENSE.txt" CopyToPublishDirectory="PreserveNewest" />
+    <Content Include="..\发布使用说明.txt" Link="发布使用说明.txt" CopyToPublishDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

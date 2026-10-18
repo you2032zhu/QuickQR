@@ -1,0 +1,47 @@
+# Visual Studio / .NET
+**/bin/
+**/obj/
+.vs/
+.idea/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+*.rsuser
+*.VC.db
+*.pdb
+*.cache
+TestResults/
+coverage/
+*.coverage*
+
+# Generated packages and local tools
+artifacts/
+publish/
+dist/
+work/
+packages/
+*.zip
+*.nupkg
+*.log
+*.tmp
+*.temp
+*.bak
+
+# Secrets and machine-specific settings; NuGet.Config contains only the public feed.
+.env
+.env.*
+!.env.example
+secrets.json
+appsettings.Local.json
+NuGet.Local.Config
+*.pfx
+*.p12
+*.pem
+*.key
+**/Properties/PublishProfiles/*.pubxml.user
+
+# OS files
+Thumbs.db
+Desktop.ini
+.DS_Store

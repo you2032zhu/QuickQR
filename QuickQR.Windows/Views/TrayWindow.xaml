@@ -1,0 +1,18 @@
+<Window x:Class="QuickQR.Views.TrayWindow" xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:local="clr-namespace:QuickQR.Views"
+        Style="{StaticResource {x:Type Window}}" Title="QuickQR 快捷面板" Width="368" SizeToContent="Height" WindowStyle="None" ResizeMode="NoResize" ShowInTaskbar="False" ShowActivated="False" Topmost="True" Background="Transparent" AllowsTransparency="True" Icon="/QuickQR;component/Resources/app.ico">
+  <Window.InputBindings><KeyBinding Key="C" Modifiers="Control+Shift" Command="{Binding CopyCommand}"/><KeyBinding Key="S" Modifiers="Control" Command="{Binding SaveCommand}"/></Window.InputBindings>
+  <Border CornerRadius="14" Background="{DynamicResource WindowBrush}" BorderBrush="{DynamicResource BorderBrush}" BorderThickness="1" Padding="20">
+    <ScrollViewer VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Disabled"><StackPanel>
+      <Grid Margin="0,0,0,14"><TextBlock Text="QuickQR" FontSize="21" FontWeight="SemiBold" VerticalAlignment="Center"/><Button Content="⚙" Click="Settings_Click" HorizontalAlignment="Right" Style="{StaticResource LinkButton}" AutomationProperties.Name="设置"/></Grid>
+      <Grid><TextBox x:Name="InputBox" Height="82" Text="{Binding Text, UpdateSourceTrigger=PropertyChanged}" AcceptsReturn="True" TextWrapping="Wrap" VerticalScrollBarVisibility="Auto" AutomationProperties.Name="快捷面板二维码内容"/>
+        <TextBlock Text="输入文本或粘贴链接..." Margin="15" Foreground="{DynamicResource MutedBrush}" IsHitTestVisible="False"><TextBlock.Style><Style TargetType="TextBlock"><Setter Property="Visibility" Value="Collapsed"/><Style.Triggers><DataTrigger Binding="{Binding Text}" Value=""><Setter Property="Visibility" Value="Visible"/></DataTrigger></Style.Triggers></Style></TextBlock.Style></TextBlock>
+      </Grid>
+      <Border Background="White" CornerRadius="8" Margin="0,16" Padding="8" HorizontalAlignment="Center"><Grid Width="224" Height="224"><local:QRPreview Document="{Binding Document}"/><TextBlock Text="等待输入" Foreground="#768299" HorizontalAlignment="Center" VerticalAlignment="Center"><TextBlock.Style><Style TargetType="TextBlock"><Setter Property="Visibility" Value="Visible"/><Style.Triggers><DataTrigger Binding="{Binding HasCode}" Value="True"><Setter Property="Visibility" Value="Collapsed"/></DataTrigger></Style.Triggers></Style></TextBlock.Style></TextBlock></Grid></Border>
+      <TextBlock Text="{Binding Status}" Style="{StaticResource Muted}" FontSize="12" Margin="0,0,0,10"/>
+      <UniformGrid Columns="2"><Button Content="复制二维码" Command="{Binding CopyCommand}" Style="{StaticResource PrimaryButton}" Margin="0,0,5,0"/><Button Content="保存图片" Command="{Binding SaveCommand}" Margin="5,0,0,0"/></UniformGrid>
+      <UniformGrid Columns="2" Margin="0,6,0,0"><Button Content="粘贴文本" Command="{Binding PasteCommand}" Style="{StaticResource LinkButton}"/><Button Content="清空内容" Command="{Binding ClearCommand}" Style="{StaticResource LinkButton}"/></UniformGrid>
+      <TextBlock Text="{Binding Notice}" TextWrapping="Wrap" Foreground="{DynamicResource AccentBrush}" FontSize="12" Margin="0,4,0,4"/>
+      <Border BorderBrush="{DynamicResource BorderBrush}" BorderThickness="0,1,0,0" Margin="0,8,0,0" Padding="0,6,0,0"><DockPanel><Button Content="打开主窗口" Click="OpenMain_Click" Style="{StaticResource LinkButton}" Margin="-8,0,0,0"/><Button Content="退出应用" Click="Exit_Click" Style="{StaticResource LinkButton}" HorizontalAlignment="Right" Margin="0,0,-8,0"/></DockPanel></Border>
+    </StackPanel></ScrollViewer>
+  </Border>
+</Window>

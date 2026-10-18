@@ -1,0 +1,9 @@
+<Project>
+  <PropertyGroup>
+    <Version>1.0.0</Version>
+    <Deterministic>true</Deterministic>
+    <ContinuousIntegrationBuild Condition="'$(CI)' == 'true'">true</ContinuousIntegrationBuild>
+    <DebugType>embedded</DebugType>
+    <PathMap>$(MSBuildThisFileDirectory)=/_/QuickQR/</PathMap>
+  </PropertyGroup>
+</Project>
