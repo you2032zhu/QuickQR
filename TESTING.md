@@ -8,7 +8,7 @@
 - `build.yml` / `release.yml` 通过 actionlint 1.7.12 检查；PowerShell 脚本通过 AST 语法检查。官方 Actions 输入和固定 SHA 已核对。
 - `scripts/Package.ps1 -Tag v1.0.0 -SkipBuild` 在本地执行成功，两个自包含 ZIP 的架构、GUI 子系统、运行时声明及每个文件的 SHA256 均已验证。这里只生成候选包，不创建正式标签。
 - GitHub 账号为用户确认的 `you2032zhu`；MIT 经用户确认后添加，保留第三方许可证。模式扫描与人工审查未发现凭据或个人绝对路径；扫描不等同于第三方安全认证。
-- 本地验证没有触发 GitHub hosted Actions，不能宣称云端 CI 已通过。公开仓库、首次推送、正式标签和 Release 仍等待明确授权。
+- 维护者已授权创建公开仓库 `you2032zhu/QuickQR` 并首次推送 main；首次 GitHub hosted [Build #39090952893](https://github.com/you2032zhu/QuickQR/actions/runs/39090952893) 成功，覆盖敏感信息检查、SDK 安装、严格编译、非交互测试、x64 自包含发布及产物上传。正式标签和 Release 尚未创建，仍须另行确认。
 - Inno Setup 仅提供候选源码。当前无编译器，未执行安装/卸载测试，不生成或上传未经验证的安装器。
 - 新增隔离示例宿主，使用实际 WPF 视图和合成内容捕获浅色、深色主窗口截图；PNG 示例由实际生成与导出服务输出。托盘窗口不能被当前截图工具枚举，因此保留位置，没有伪造截图。
 

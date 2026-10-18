@@ -1,5 +1,6 @@
 # QuickQR for Windows
 
+[![Build](https://github.com/you2032zhu/QuickQR/actions/workflows/build.yml/badge.svg)](https://github.com/you2032zhu/QuickQR/actions/workflows/build.yml)
 ![Windows 10 / 11](https://img.shields.io/badge/Windows-10%20%2F%2011-0078D4?logo=windows)
 ![.NET 10](https://img.shields.io/badge/.NET-10-512BD4?logo=dotnet)
 [![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](LICENSE)
@@ -10,7 +11,7 @@
 
 [下载 Releases](https://github.com/you2032zhu/QuickQR/releases) · [构建记录](https://github.com/you2032zhu/QuickQR/actions/workflows/build.yml) · [更新日志](CHANGELOG.md) · [贡献指南](CONTRIBUTING.md)
 
-> 当前源码版本为 **1.0.0，尚未创建正式发布标签**。以上是拟发布仓库的入口，首次公开仓库和 Release 获得维护者确认后才会生效。
+> 当前源码版本为 **1.0.0，尚未创建正式发布标签或 Release**。仓库已公开；CI 成功后，可在相应构建记录下载 x64 构建产物。正式 Releases 下载包会在维护者批准版本发布后提供。
 
 ## 截图
 
