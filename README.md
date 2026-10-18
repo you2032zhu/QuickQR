@@ -11,7 +11,7 @@
 
 [下载 Releases](https://github.com/you2032zhu/QuickQR/releases) · [构建记录](https://github.com/you2032zhu/QuickQR/actions/workflows/build.yml) · [更新日志](CHANGELOG.md) · [贡献指南](CONTRIBUTING.md)
 
-> 当前源码版本为 **1.0.0，尚未创建正式发布标签或 Release**。仓库已公开；CI 成功后，可在相应构建记录下载 x64 构建产物。正式 Releases 下载包会在维护者批准版本发布后提供。
+> 当前版本为 **1.0.0**。正式下载入口：[v1.0.0 Release](https://github.com/you2032zhu/QuickQR/releases/tag/v1.0.0)。发布包含 x64 和 ARM64 自包含 ZIP 及 SHA256 校验文件，平台验证范围见下文。
 
 ## 截图
 
@@ -164,4 +164,4 @@ pwsh ./scripts/Package.ps1 -Tag v1.0.0
 
 欢迎 Issue 和 PR，参见 [CONTRIBUTING.md](CONTRIBUTING.md)。本项目使用 [MIT License](LICENSE)，署名 `you2032zhu`；ZXing.Net 保持 Apache-2.0，.NET / Windows Desktop 的声明继续保留，见 [THIRD-PARTY-NOTICES.md](THIRD-PARTY-NOTICES.md)。
 
-版本集中在 `Directory.Build.props`，遵循 SemVer：修复递增补丁版本、兼容新功能递增次版本、破坏性修改递增主版本。当前为 **1.0.0 候选版本**，正式版本以经维护者批准的标签和 Release 为准。
+版本集中在 `Directory.Build.props`，遵循 SemVer：修复递增补丁版本、兼容新功能递增次版本、破坏性修改递增主版本。当前为 **1.0.0**，正式版本以经维护者批准的标签和 Release 为准。
